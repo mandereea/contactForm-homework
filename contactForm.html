@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AM'a ContactForm Homework</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="style.sheet" href="normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="contactForm.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+           <div class="banner">
+                <div class=msg-wrapper>
+                <span class="check-mrk">.</span>
+                <p class='banner-msg'>
+                    Thank you for contacting us,
+                </p>
+                </div>
+                <button class="close">&times</button>
+           </div>
+
+           <div class="form-wrapper">
+               <form>
+                   <ul>
+                       <li>
+                          <input type="text" class="userInput" id="first-name" placeholder="First Name" required autofocus>  
+                       </li>
+                       <li>
+                          <input type="text" class="userInput" id="last-name" placeholder="Last Name" required>  
+                       </li>
+                       <li class="radio-wrapper">
+                          <p>Gender:</p>
+                          <div class="radio-btns">
+                            <input type="radio" name="gender" id="fem" value="F" checked>
+                            <label for "fem">F</label>
+                            <br/>
+                            <input type="radio" name="gender" id="masc" value="M">
+                            <label for "masc">M</label>
+                           </div>  
+                       </li>
+                       <li>
+                          <textarea  class="userInput" rows="5" placeholder="Your message here..." required></textarea>  
+                       </li>
+                       <li>
+                          <button class="submit-btn">Submit</button> 
+                       </li>
+                   </ul>
+                </form>
+                <div class="picture">
+                </div>
+            </div>
+        </div>
+            
+        <script src='contactForm.js'></script>
+    </body>
+</html>
