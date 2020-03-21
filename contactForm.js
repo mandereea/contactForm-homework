@@ -10,35 +10,28 @@ const closeBtn = document.querySelector('.close');
 btn.addEventListener('click', (event) => {
     event.preventDefault();
     const regex= /^[a-z ,.'-]+$/i;
-    if (!regex.test(firstName.value)) {
-        firstName.style.borderColor = "lightcoral";
-        alert('please enter a valid first name');
-        return false;
-    } else {
-        firstName.style.borderColor = "lightseagreen";
-    }
+    
+    const isValidFirstName = regex.test(firstName.value);
+    isValidFirstName ? firstName.style.borderColor = "lightseagreen": firstName.style.borderColor = "lightcoral";
 
-    if (!regex.test(lastName.value)) {
-            alert('please enter a valid last name');
-            lastName.style.borderColor = "lightcoral";
-            return false;
-    } else {
-            lastName.style.borderColor = "lightseagreen";
-    }
+    const isValidLastName = regex.test(lastName.value);
+    isValidLastName ? lastName.style.borderColor = "lightseagreen": lastName.style.borderColor = "lightcoral"
 
-    if(userMessage.value.length < 10) {
+    const userMessageLength = userMessage.value.length;
+    if(userMessageLength < 10) {
         userMessage.style.borderColor = "lightcoral";
         alert('your message must be at least 10 characters.');
-        return false; 
     } else {
         userMessage.style.borderColor = 'lightseagreen';
     }
 
-    const title = getUserName(firstName,lastName);
-    displayUsrMsg(title,userMessage);
-    bannerMsg(firstName);
-    elementOn(banner);
-    console.log(':)');
+    if(isValidFirstName && isValidLastName && userMessageLength >= 10) {
+        const title = getUserName(firstName,lastName);
+        displayUsrMsg(title,userMessage);
+        bannerMsg(firstName);
+        elementOn(banner);
+        console.log(':)');
+    }
 });
 
 // am vrut sa am o functie care sa capitalizeze numele, pentru afisarea in banner/usermsg la final
